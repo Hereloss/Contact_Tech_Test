@@ -41,4 +41,9 @@ describe LocationFilter do
     expect(subject.find_people("Los Angeles")).to include("Bojack Horseman")
   end
 
+  it 'If an invalid path is chosen, an error is raised and the file being accessed is unchanged' do
+    expect{ subject.amend_source_location('./example_data_3.json') }.to raise_error("No such file or directory @ rb_sysopen - ./example_data_3.json")
+    expect(subject.find_people("SpringField")).to include("Homer Simpson")
+  end
+
 end
