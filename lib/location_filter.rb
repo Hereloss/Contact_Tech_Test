@@ -10,10 +10,12 @@ class LocationFilter
   end
 
   def find_people(location)
+    @people_in_location = []
     @data_hash.each do |data|
       if data["location"] == location
-        return data["name"]
+        @people_in_location << data["name"]
       end
     end
+    @people_in_location
   end
 end
