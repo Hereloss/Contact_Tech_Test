@@ -23,4 +23,11 @@ describe LocationFilter do
     expect(subject.find_people("Springfield")).to eq("Homer Simpson\nMarge Simpson\n")
   end
 
+  it 'Is case insensitive for searching location' do
+    expect(subject.find_people("Springfield")).to include("Krusty the Clown")
+    expect(subject.find_people("SpringField")).to include("Homer Simpson")
+    expect(subject.find_people("SPRINGFIELD")).to include("Homer Simpson")
+    expect(subject.find_people("springfield")).to include("Homer Simpson")
+  end
+
 end
