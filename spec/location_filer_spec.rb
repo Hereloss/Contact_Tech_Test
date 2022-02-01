@@ -19,4 +19,8 @@ describe LocationFilter do
     expect(subject.find_people("Springfield")).to include("Marge Simpson")
   end
 
+  it 'It will output the results as one per line' do
+    expect(subject.find_people("Springfield")).to eq("Homer Simpson \n Marge Simpson")
+  end
+
 end
