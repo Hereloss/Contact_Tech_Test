@@ -70,7 +70,7 @@ I would like the search to be case insensitive
 
 As a user,
 So I can find all people fitting this location search,
-I would like a list of people to be returned
+I would like a list of all people fitting the search to be returned
 
 ### Process
 

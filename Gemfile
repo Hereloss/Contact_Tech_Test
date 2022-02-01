@@ -10,3 +10,5 @@ gem "simplecov", "~> 0.21.2"
 gem "rubocop", "~> 1.25"
 
 gem "simplecov-console", "~> 0.9.1"
+
+gem "json", "~> 2.6"
