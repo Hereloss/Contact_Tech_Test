@@ -27,4 +27,9 @@ class LocationFilter
     puts output
     output
   end
+
+  def amend_source_location(path)
+    file = File.read(path)
+    @data_hash = JSON.parse(file)
+  end
 end
