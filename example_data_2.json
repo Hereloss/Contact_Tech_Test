@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Maggie Simpson",
+    "location": "Springfield",
+    "date_of_birth": "2000-05-12"
+  },
+  {
+    "name": "Dennis Reynolds",
+    "location": "Philidelphia",
+    "date_of_birth": "1944-11-17"
+  },
+  {
+    "name": "Bojack Horseman",
+    "location": "Los Angeles",
+    "date_of_birth": "1970-03-19"
+  },
+  {
+    "name": "Sideshow Bob",
+    "location": "SPRINGFIELD",
+		"date_of_birth": "1957-10-29"
+  }
+]

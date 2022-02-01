@@ -30,4 +30,15 @@ describe LocationFilter do
     expect(subject.find_people("Springfield")).to eq("Homer Simpson\nMarge Simpson\nKrusty the Clown\n")
   end
 
+  it 'If a location is typed with spaces, it will still find this as intended' do
+    expect(subject.find_people("Los Angeles")).to include("Diane Nguyen")
+  end
+
+  it 'You can ammend the source file location' do
+    subject.amend_source_location('./example_data_2.json')
+    expect(subject.find_people("Springfield")).to include("Maggie Simpson")
+    expect(subject.find_people("Philidelphia")).to include("Dennis Reynolds")
+    expect(subject.find_people("Los Angeles")).to include("Bojack Horseman")
+  end
+
 end
