@@ -5,6 +5,11 @@
     "date_of_birth": "1956-05-12"
   },
   {
+    "name": "Marge Simpson",
+    "location": "Springfield",
+    "date_of_birth": "1966-06-11"
+  },
+  {
     "name": "Frank Reynolds",
     "location": "Philidelphia",
     "date_of_birth": "1944-11-17"

@@ -10,8 +10,13 @@ describe LocationFilter do
     expect(subject).to respond_to(:find_people).with(1).argument
   end
 
-  it 'find_people will locate people with the specified location' do
+  it 'find_people will locate a person with the specified location' do
     expect(subject.find_people("Philidelphia")).to include("Frank Reynolds")
+  end
+
+  it 'If multiple people live in the same location, find_people will find them all' do
+    expect(subject.find_people("Springfield")).to include("Homer Simpson")
+    expect(subject.find_people("Springfield")).to include("Marge Simpson")
   end
 
 end
