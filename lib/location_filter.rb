@@ -6,4 +6,8 @@ class LocationFilter
     file = File.read('./example_data.json')
     data_hash = JSON.parse(file)
   end
+
+  def find_people(location)
+
+  end
 end
