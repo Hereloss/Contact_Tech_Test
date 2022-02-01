@@ -12,7 +12,7 @@ class LocationFilter
   def find_people(location)
     @people_in_location = []
     @data_hash.each do |data|
-      if data["location"] == location
+      if data["location"].downcase == location.downcase
         @people_in_location << data["name"]
       end
     end
@@ -25,6 +25,6 @@ class LocationFilter
       output += person + "\n"
     end
     puts output
-    return output
+    output
   end
 end
