@@ -16,6 +16,15 @@ class LocationFilter
         @people_in_location << data["name"]
       end
     end
-    @people_in_location
+    format_output
+  end
+
+  def format_output
+    output = ''
+    @people_in_location.each do |person|
+      output += person + "\n"
+    end
+    puts output
+    return output
   end
 end
