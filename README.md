@@ -86,7 +86,10 @@ Make a search by location as listed in the 'Commands' section below!
 
 ### Commands
 To find a set of people with a given location: find_people(location)
-To amend the path of the data you'd like to look in: amend_source_location(path)
+
+To amend the path of the data you'd like to look in: amend_source_location(path)  
+The path should be relative to the source folder of location_filter.rb   
+E.g to change to the file 'example_data_2.json' in this folder use "location.amend_source_location('./example_data_2.json')"
 
 ### Feature Test
 Set up the application as stated above, and input the following into your terminal:
