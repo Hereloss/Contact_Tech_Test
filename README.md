@@ -74,6 +74,23 @@ I would like a list of all people fitting the search to be returned
 
 ### Process
 
+My process was to firstly decide on some user stories that I would use to structure the application. I also decided to add in the user story of being able to import your own data (which I have implimented by allowing the file path for the JSON to be changed) as this allows for me to more easily test with test data, and means using this for any future data will be much easier.
+
+I then finished a working application, and then decided to refactor this. I also decided to split my one class into 2 classes, adding a printer class to format and print the returned names.
+
 ## How to use
 ### Set up
+Load up IRB or a REPL of your choice Require the location_filter.rb file: If using PRY: load './lib/location_filter.rb' If using IRB: require './lib/location_filter.rb'
+Instantiate a new LocationFilter class in your REPL using the following line of code: location_filter = LocationFilter.new
+Make a search by location as listed in the 'Commands' section below!
+
+### Commands
+To find a set of people with a given location: find_people(location)
+To amend the path of the data you'd like to look in: amend_source_location(path)
+
 ### Feature Test
+Set up the application as stated above, and input the following into your terminal:
+
+find_people('Springfield')
+
+You will see an output similar to the one stated in the example.
