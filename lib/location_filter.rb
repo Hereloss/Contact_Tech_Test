@@ -1,8 +1,11 @@
+# frozen_string_literal: true
+
 require 'json'
-require_relative 'printer.rb'
+require_relative 'printer'
 
+# This class loads the data, and then searches by location. The data source can also be amended with
+# The amend_source_location method
 class LocationFilter
-
   attr_reader :data_hash
 
   def initialize(printer = Printer.new)
@@ -12,8 +15,7 @@ class LocationFilter
   end
 
   def find_people(location)
-    people_in_location = @data_hash.select { |data| data["location"].downcase == location.downcase }
-    p people_in_location
+    people_in_location = @data_hash.select { |data| data['location'].downcase == location.downcase }
     @printer.format_output(people_in_location)
   end
 
