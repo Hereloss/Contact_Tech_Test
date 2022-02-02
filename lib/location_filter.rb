@@ -2,16 +2,14 @@
 
 require 'json'
 require_relative 'printer'
+require_relative 'data_sourcer'
 
-# This class loads the data, and then searches by location. The data source can also be amended with
-# The amend_source_location method
+# This class searches for people by location
 class LocationFilter
-  attr_reader :data_hash
-
-  def initialize(printer = Printer.new)
-    file = File.read('./example_data.json')
-    @data_hash = JSON.parse(file)
+  def initialize(printer = Printer.new, data_sourcer = DataSourcer.new)
+    @data_sourcer = data_sourcer
     @printer = printer
+    @data_hash = @data_sourcer.data_hash
   end
 
   def find_people(location)
@@ -20,7 +18,6 @@ class LocationFilter
   end
 
   def amend_source_location(path)
-    file = File.read(path)
-    @data_hash = JSON.parse(file)
+    @data_hash = @data_sourcer.amend_source_location(path)
   end
 end

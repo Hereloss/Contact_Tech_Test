@@ -76,7 +76,7 @@ I would like a list of all people fitting the search to be returned
 
 My process was to firstly decide on some user stories that I would use to structure the application. I also decided to add in the user story of being able to import your own data (which I have implimented by allowing the file path for the JSON to be changed) as this allows for me to more easily test with test data, and means using this for any future data will be much easier.
 
-I then finished a working application, and then decided to refactor this. I also decided to split my one class into 2 classes, adding a printer class to format and print the returned names.
+I then finished a working application, and then decided to refactor this. I also decided to split my one class into 3 classes, adding a printer class to format and print the returned names, and a data sourcer class to retrieve and parse the data, and allow changing of data sources.
 
 ## How to use
 ### Set up
