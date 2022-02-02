@@ -2,6 +2,13 @@ require './lib/location_filter'
 
 describe LocationFilter do
 
+  before(:each) do
+    printer_double = double()
+    allow(printer_double).to receive(:message) do |arg|
+    end
+    location = LocationFilter.new(printer_double)
+  end
+
   it 'The data_hash variable displays the parsed Json' do
     expect(subject.data_hash[0]).to eq({"name"=>"Homer Simpson", "location"=>"Springfield", "date_of_birth"=>"1956-05-12"})
   end
@@ -24,10 +31,6 @@ describe LocationFilter do
     expect(subject.find_people("SpringField")).to include("Homer Simpson")
     expect(subject.find_people("SPRINGFIELD")).to include("Homer Simpson")
     expect(subject.find_people("springfield")).to include("Homer Simpson")
-  end
-
-  it 'It will output the results as one per line' do
-    expect(subject.find_people("Springfield")).to eq("Homer Simpson\nMarge Simpson\nKrusty the Clown\n")
   end
 
   it 'If a location is typed with spaces, it will still find this as intended' do
