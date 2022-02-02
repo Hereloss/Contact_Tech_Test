@@ -78,6 +78,10 @@ My process was to firstly decide on some user stories that I would use to struct
 
 Then I finished a working application, and decided to refactor this. I also decided to split my one class into 3 classes, adding a printer class to format and print the returned names, and a data sourcer class to retrieve and parse the data, and allow changing of data sources.
 
+Finally, I added in tests to manage malformed JSON data in 3 forms - where the name was blank, the JSON was fully invalid (malformed_data_2.json) and where there were multiple keys (malformed_data.json), and ensured this raised the appropriate errors. 
+
+To do this, I added the duplicate_checking class, which simply checks for any duplicate keys in a single entry in the JSON eg. `{"name": "Homer", "name": "Marge"}` and raises an error if this is the case.
+
 I typically would not document easily readable classes/methods, however have done so in this case as linting gem I'm using recommended to do so, and this tech test asked for strong documentation.
 
 ## How to use
