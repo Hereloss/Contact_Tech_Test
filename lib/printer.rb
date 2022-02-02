@@ -7,6 +7,6 @@ class Printer
   end
 
   def self.formatted_people_in_location(people_in_location)
-    (people_in_location.map { |person| person['name'] }).join("\n")
+    (people_in_location.filter_map { |person| person['name'] if person['name'] != '' }).join("\n")
   end
 end
