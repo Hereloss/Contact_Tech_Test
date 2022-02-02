@@ -3,7 +3,7 @@
     "name": "Maggie Simpson",
     "location": "Springfield",
     "date_of_birth": "2000-05-12"
-  },
+  ,
   {
     "name": "Dennis Reynolds",
     "location": "Philidelphia",
@@ -18,9 +18,5 @@
     "name": "Sideshow Bob",
     "location": "SPRINGFIELD",
 		"date_of_birth": "1957-10-29"
-  },
-  {
-    "location": "New New York",
-		"date_of_birth": "1982-10-29"
   }
 ]
