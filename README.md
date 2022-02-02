@@ -46,7 +46,7 @@ For example, given:
 
 Your program should output:
 
-```jsx  
+```  
 Homer Simpson  
 Krusty the Clown  
 ```  
@@ -74,26 +74,36 @@ I would like a list of all people fitting the search to be returned
 
 ### Process
 
-My process was to firstly decide on some user stories that I would use to structure the application. I also decided to add in the user story of being able to import your own data (which I have implimented by allowing the file path for the JSON to be changed) as this allows for me to more easily test with test data, and means using this for any future data will be much easier.
+My process was to firstly decide on some user stories that I would use to structure the application. I also decided to add in the user story of being able to import your own data (which I have implimented by allowing the file path for the JSON to be changed) as this allows for easier usage new files which may include different data.
 
-I then finished a working application, and then decided to refactor this. I also decided to split my one class into 3 classes, adding a printer class to format and print the returned names, and a data sourcer class to retrieve and parse the data, and allow changing of data sources.
+Then I finished a working application, and decided to refactor this. I also decided to split my one class into 3 classes, adding a printer class to format and print the returned names, and a data sourcer class to retrieve and parse the data, and allow changing of data sources.
+
+I typically would not document easily readable classes/methods, however have done so in this case as linting gem I'm using recommended to do so, and this tech test asked for strong documentation.
 
 ## How to use
 ### Set up
-Load up IRB or a REPL of your choice Require the location_filter.rb file: If using PRY: load './lib/location_filter.rb' If using IRB: require './lib/location_filter.rb'
-Instantiate a new LocationFilter class in your REPL using the following line of code: location_filter = LocationFilter.new
-Make a search by location as listed in the 'Commands' section below!
+1. Load up IRB or a REPL of your choice   
+2. Require the location_filter.rb file:  
+  - If using PRY: load './lib/location_filter.rb'  
+  - If using IRB: require './lib/location_filter.rb'  
+3. Instantiate a new LocationFilter class in your REPL using the following line of code:  
+`location_filter = LocationFilter.new`
+4. Make a search by location as listed in the 'Commands' section below!
 
 ### Commands
-To find a set of people with a given location: find_people(location)
+- To find a set of people with a given location:  
+`find_people(location)`
 
-To amend the path of the data you'd like to look in: amend_source_location(path)  
-The path should be relative to the source folder of location_filter.rb   
-E.g to change to the file 'example_data_2.json' in this folder use "location.amend_source_location('./example_data_2.json')"
+- To amend the path of the data you'd like to look in:  
+`amend_source_location(path)`  
 
-### Feature Test
+The path should be relative to the source folder of `location_filter.rb`  
+
+E.g to change to the file `example_data_2.json` in this folder use `location.amend_source_location('./example_data_2.json')`
+
+## Feature Test
 Set up the application as stated above, and input the following into your terminal:
 
-find_people('Springfield')
+`find_people('Springfield')`
 
 You will see an output similar to the one stated in the example.
