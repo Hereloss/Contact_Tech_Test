@@ -10,5 +10,7 @@ class DataSourcer
   def amend_source_location(path)
     file = File.read(path)
     @data_hash = JSON.parse(file)
+    rescue 
+      raise 'Error - JSON data is malformed or location does not contain JSON file'
   end
 end

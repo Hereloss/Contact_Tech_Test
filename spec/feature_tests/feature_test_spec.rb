@@ -20,7 +20,7 @@ describe LocationFilter do
     it 'will do a incorrect file change, search by location and return data from the original file correctly' do
       expect do
         subject.amend_source_location('./example_data_3.json')
-      end.to raise_error('No such file or directory @ rb_sysopen - ./example_data_3.json')
+      end.to raise_error('Error - JSON data is malformed or location does not contain JSON file')
       expect(subject.find_people('Springfield')).to eq("Homer Simpson\nMarge Simpson\nKrusty the Clown")
     end
   end
