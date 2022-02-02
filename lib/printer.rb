@@ -1,12 +1,9 @@
 class Printer
 
   def format_output(people_in_location)
-    output = ''
-    people_in_location.each do |person|
-      output += person['name'] + "\n"
-    end
-    puts output
-    output
+    formatted_people = (people_in_location.map {|person| person['name']}).join("\n")
+    puts formatted_people
+    formatted_people
   end
 
 end

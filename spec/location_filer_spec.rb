@@ -5,11 +5,7 @@ describe LocationFilter do
   before(:each) do
     printer_double = double()
     allow(printer_double).to receive(:format_output) do |arg|
-      all_people = ''
-      arg.each do |person|
-        all_people += person["name"]
-      end
-      all_people
+      arg.map {|person| person['name']}
     end
     @location = LocationFilter.new(printer_double)
   end
